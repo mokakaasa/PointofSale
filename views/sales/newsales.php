@@ -11,13 +11,7 @@ use yii\widgets\ActiveForm;
 /** @var app\models\Product $product */
 /** @var yii\widgets\ActiveForm $form */
 ?>
-<?php if (Yii::$app->session->hasFlash('SALES')):?>
 
-    <div class="alert alert-success">
-        'A NEW SALES RECORD WAS CREATED SUCCESSFULLY'
-    </div>
-
-<?php endif; ?>
 
 <div class="new-expense">
 

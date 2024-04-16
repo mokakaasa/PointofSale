@@ -20,6 +20,14 @@ use yii\data\Pagination;
 $this->title = 'LIST OF ALL PRODUCTS';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php if (Yii::$app->session->hasFlash('PRODUCT')): ?>
+
+    <div class="alert alert-success">
+        'A NEW PRODUCT RECORD WAS CREATED SUCCESSFULLY'
+    </div>
+
+<?php endif; ?>
+
 
 <div class="product-index">
     <h1><?= Html::encode($this->title) ?></h1>

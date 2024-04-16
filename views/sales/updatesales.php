@@ -7,13 +7,6 @@ use yii\widgets\ActiveForm;
 /** @var app\models\Sales $sales*/
 /** @var yii\widgets\ActiveForm $form */
 ?>
-<?php if (Yii::$app->session->hasFlash('SALE(s) UPDATE')): ?>
-
-    <div class="alert alert-success">
-        'SALE(s) RECORD WAS UPDATED SUCCESSFULLY'
-    </div>
-
-<?php endif; ?>
 
 <div class="update-expense">
 

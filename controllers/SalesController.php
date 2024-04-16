@@ -65,7 +65,7 @@ class SalesController extends Controller
         if ( $sales->load(Yii::$app->request->post())) {
             if ( $sales->createUpdate()) {
                 Yii::$app->session->setFlash('SALE(s) UPDATE');
-                return $this->redirect(['sales', 'id' =>  $sales->id]);
+                return $this->redirect(['view-sales', 'id' =>  $sales->id]);
             }
         }
         return $this->render('updatesales', ['sales' =>  $sales]);

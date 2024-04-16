@@ -50,7 +50,7 @@ class  PosController extends Controller
             // Check if imageFile is empty
             if ($product->createNewProduct($productModel)) {
                 Yii::$app->session->setFlash('PRODUCT');
-                return $this->redirect('new-product');
+                return $this->redirect('product');
             }
         }
         return $this->render('newproduct', ['product' => $productModel]);
@@ -69,7 +69,7 @@ class  PosController extends Controller
 
 
             if ($product->createUpdate()) {
-                Yii::$app->session->setFlash('PRODUCTUPDATE');
+                Yii::$app->session->setFlash('PRODUCT UPDATE');
                 return $this->redirect(['view', 'id' => $product->id]); // Redirect to the product view page
             }
         }

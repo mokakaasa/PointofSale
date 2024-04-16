@@ -12,6 +12,14 @@ $this->params['breadcrumbs'][] = ['label' => 'List of All Products', 'url' => ['
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<?php if (Yii::$app->session->hasFlash('PRODUCT UPDATE')): ?>
+
+ <div class="alert alert-success">
+  'PRODUCT RECORD WAS UPDATED SUCCESSFULLY'
+ </div>
+
+<?php endif; ?>
+
  <?php
 echo "Product's ID:".$product->id.'<br>';
 echo "Product's Name:".$product->name.'<br>';

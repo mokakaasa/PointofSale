@@ -7,13 +7,7 @@ use yii\widgets\ActiveForm;
 /** @var app\models\Product $product */
 /** @var yii\widgets\ActiveForm $form */
 ?>
-<?php if (Yii::$app->session->hasFlash('PRODUCT')): ?>
 
-    <div class="alert alert-success">
-        'A NEW PRODUCT RECORD WAS CREATED SUCCESSFULLY'
-    </div>
-
-<?php endif; ?>
 
 <div class="new-product">
 

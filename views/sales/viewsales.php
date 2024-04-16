@@ -22,6 +22,13 @@ $this->title = 'SALE(s) DETAILS';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<?php if (Yii::$app->session->hasFlash('SALE(s) UPDATE')): ?>
+
+    <div class="alert alert-success">
+        'SALE(s) RECORD WAS UPDATED SUCCESSFULLY'
+    </div>
+
+<?php endif; ?>
 
 <div class="viewexpenses-index">
     <h1><?= Html::encode($this->title) ?></h1>
