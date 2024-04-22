@@ -1,10 +1,12 @@
 <?php
 
 namespace app\controllers;
+use app\models\Product;
 use yii;
 use app\models\SalesSearch;
 use yii\web\Controller;
 use app\models\Sales;
+use yii\helpers\Json;
 
 
 class SalesController extends Controller
@@ -39,7 +41,6 @@ class SalesController extends Controller
         }
         return $this->render('newsales', ['sales' => $sales]);
     }
-
     public function actionViewSales($id)
     {
         $salessearchModel = new SalesSearch();

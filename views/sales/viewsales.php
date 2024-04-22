@@ -45,10 +45,18 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->product->name;
                 },
             ],
+            [
+                'attribute' => 'expected_price',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->product->price;
+                },
+            ],
             'quantity',
-            'expected_price',
             'sold_price',
             'sales_date',
+            'total_amount',
+
         ],
     ]); ?>
 </div>

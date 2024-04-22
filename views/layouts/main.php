@@ -40,7 +40,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Home', 'url' => [Yii::$app->defaultRoute]],
-            ['label' => 'Product', 'url' => ['/pos/product']],
+            ['label' => 'Product', 'url' => ['/product/product']],
             ['label' => 'Sales', 'url' => ['/sales/sales']],
             ['label' => 'Expense(s) Category', 'url' => ['/expensescategory/expense-category']],
             ['label' => 'Expenses', 'url' => ['/expenses/expenses']],

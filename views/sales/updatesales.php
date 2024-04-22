@@ -14,6 +14,7 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
     <?= $form->field($sales, 'quantity')->textInput(['type' => 'number']) ?>
     <?= $form->field($sales, 'sold_price')->textInput(['type' => 'number']) ?>
+    <?= $form->field($sales, 'total_amount')->textInput(['type' => 'number', 'readonly' => true]) ?>
     <?= $form->field($sales, 'sales_date')->widget(\yii\jui\DatePicker::class, []) ?>
 
 

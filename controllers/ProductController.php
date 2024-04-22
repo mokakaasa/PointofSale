@@ -12,7 +12,7 @@ use app\models\ProductSearch;
 use yii\web\UploadedFile;
 
 
-class  PosController extends Controller
+class  ProductController extends Controller
 {
 
     public function actionIndex()

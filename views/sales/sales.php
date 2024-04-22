@@ -61,11 +61,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function ($model) {
                     return $model->product->name;
                 },
+
+            ],
+            [
+                'attribute' => 'expected_price',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->product->price;
+                },
+
             ],
             'quantity',
-            'expected_price',
             'sold_price',
             'sales_date',
+            'total_amount'
         ],
 
 
@@ -78,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
 </p>
 
 <p>
-    <?= Html::a('View Trashed Sales', ['deleted-sales'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('View Trashed Sales', ['deleted-item'], ['class' => 'btn btn-success']) ?>
 </p>
 
 </div>

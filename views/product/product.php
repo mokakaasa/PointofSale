@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a('View Product' ,$url, ['class' => 'btn btn-info']);
                     },
                     'delete' => function ($url, $product, $key) {
-                        return Html::a('Delete Product' , ['/pos/delete', 'id' => $product->id,], ['class' => 'btn btn-info']);
+                        return Html::a('Delete Product' , ['/product/delete', 'id' => $product->id,], ['class' => 'btn btn-info']);
                     }
 
 

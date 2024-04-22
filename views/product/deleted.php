@@ -37,14 +37,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'header' => 'Actions',
                 'format' => 'raw',
                 'value' => function ($product) {
-                    $buttons=Html::a( 'RETURN PRODUCT', ['/pos/reversal', 'id' => $product->id,],
+                    $buttons=Html::a( 'RETURN PRODUCT', ['/product/reversal', 'id' => $product->id,],
                         [
                             'title' => 'Update my To_Do List',
                             'class' => 'btn btn-edit',
                             'data-method'  => 'POST',
                             'data-params'  => ['id' => $product->id ],]);
 
-                    $buttons.=Html::a('DELETE PRODUCT PERMANENTLY' , ['/pos/permanently-delete-item', 'id' => $product->id,],
+                    $buttons.=Html::a('DELETE PRODUCT PERMANENTLY' , ['/product/permanently-delete-item', 'id' => $product->id,],
                         [
                             'title' => 'Delete Product',
                             'class' => 'btn btn-danger',

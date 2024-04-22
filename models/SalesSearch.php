@@ -8,10 +8,11 @@ class SalesSearch extends Sales
     public function rules()
     {
         return [
-            [['sales_date', 'quantity', 'expected_price', 'sold_price'], 'required'],
-            [['quantity', 'expected_price','sold_price','amount'], 'number'],
-            [['product_id'],'safe'],
+            [['sales_date', 'quantity', 'sold_price','total_amount'], 'required'],
+            [['quantity', 'expected_price','sold_price','total_amount','expected_amount'], 'number',],
             [['sales_date'], 'validateSalesDate'],
+            [['total_amount'], 'validateExpectedAmount'],
+            [['product_id'],'safe'],
             [['product_id'], 'exist', 'targetClass' => '\app\models\Product', 'targetAttribute' => 'id'],
         ];
     }
@@ -50,6 +51,7 @@ class SalesSearch extends Sales
             'sold_price' => $this->sold_price,
             'quantity' => $this->quantity,
             'sale_date' => $this->sales_date,
+            'total_amount' => $this->total_amount,
             'is_deleted' => 0,
         ]);
         return $salesdataProvider;
@@ -73,6 +75,7 @@ class SalesSearch extends Sales
             'sold_price' => $this->sold_price,
             'quantity' => $this->quantity,
             'sale_date' => $this->sales_date,
+            'total_amount' => $this->total_amount,
             'is_deleted' => 1,
         ]);
         return $salesdataProvider;
@@ -96,6 +99,7 @@ class SalesSearch extends Sales
             'sold_price' => $this->sold_price,
             'quantity' => $this->quantity,
             'sales_date' => $this->sales_date,
+            'total_amount' => $this->total_amount,
             'sales.is_deleted' =>0,
         ]);
         $query->andFilterWhere(['like', 'product.name', $this->product_id]);

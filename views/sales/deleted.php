@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'expected_price',
             'sold_price',
             'sales_date',
+            'total_amount',
             [
                 'header' => 'Actions',
                 'format' => 'raw',
