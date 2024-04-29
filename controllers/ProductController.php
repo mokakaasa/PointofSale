@@ -56,6 +56,14 @@ class  ProductController extends Controller
         return $this->render('newproduct', ['product' => $productModel]);
     }
 
+    public function actionGetExpectedPrice($id)
+    {
+
+        $product = Product::findOne($id);
+
+        return $product->price;
+    }
+
 
     public function actionUpdate($id)
     {

@@ -32,7 +32,7 @@ class SalesController extends Controller
     public function actionNewSales()
     {
         $sales = new Sales();
-
+        
         if ($sales ->load(Yii::$app->request->post()) && $sales ->validate()) {
             if ($sales ->createNewSales()) {
                 Yii::$app->session->setFlash('SALES');

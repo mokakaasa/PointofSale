@@ -10,16 +10,15 @@ use yii\widgets\ActiveForm;
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="new-expense">
+<div class="new-sales">
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($sales, 'product_id')->dropDownList(
-        ArrayHelper::map(\app\models\Product::find()->all(), 'id',
-            function ($model) {
-                return "Sale's Name:". $model->name . ' , ' ."Expected Price:". $model->price; // Combine name and price
-            }),
-        ['prompt' => 'Sale(s) Name and Expected Price']
+        ArrayHelper::map(\app\models\Product::find()->all(),'id','name'),
+        ['prompt'=>"Sale's Name",'id' => 'product_id']
     ) ?>
+
+   <?= $form->field($sales, 'expected_price')->textInput(['type' => 'number', 'readonly' => true, 'id' => 'expected_price']) ?>
 
     <?= $form->field($sales, 'quantity')->textInput(['type' => 'number', 'id' => 'quantity', 'onkeyup' => "getTotalAmount()"]) ?>
 
@@ -28,18 +27,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($sales, 'total_amount')->textInput(['type' => 'number', 'readonly' => true, 'id' => 'total_amount']) ?>
 
     <?= $form->field($sales, 'sales_date')->widget(\yii\jui\DatePicker::class, []) ?>
-
-    <script>
-        const getTotalAmount = () => {
-            const quantityField = document.getElementById('quantity');
-            const soldPriceField = document.getElementById('sold_price');
-            const totalAmountField = document.getElementById('total_amount');
-
-            if (Number(quantityField.value) && Number(soldPriceField.value)) {
-                totalAmountField.value = Number(quantityField.value) * Number(soldPriceField.value);
-            }
-        }
-    </script>
 
 
 

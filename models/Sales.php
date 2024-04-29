@@ -47,12 +47,12 @@ class Sales extends ActiveRecord
         }
     }
 
-    public function validateExpectedAmount($attribute, $params) 
+    public function validateExpectedAmount($attribute, $params)
     {
         $product = Product::findOne($this->product_id);
         try {
             $expected_amount = $product->price * $this->quantity;
-            if ( $this->total_amount <   $expected_amount) {
+            if ( $this->total_amount < $expected_amount) {
                 $this->addError($attribute, "The system DOESN'T accept loss");
             }
         } catch (\Exception $exception) {
